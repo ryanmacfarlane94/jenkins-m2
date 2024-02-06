@@ -8,7 +8,8 @@ pipeline {
         }
         stage('Touch M2 Environment') {
             steps {
-                sh 'magento-cloud ssh -e staging;touch var/test.txt;' 
+                sh '${SSH_URL}'
+                touch 'var/test.txt'
             }
         }
 
